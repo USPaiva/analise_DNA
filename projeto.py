@@ -1,7 +1,7 @@
 ###################Projeto###################
-## Autores: Uriel Gonçalves Paiva da conceição
+## Autores: Luara Teodoro Lima ; Paloma Ketnyn Machado ; Uriel Gonçalves Paiva da conceição
 ## Turma: FEAU-5UNA
-## Matriculas: 02010287 ; 
+## Matriculas: 02011062 ;  ; 02010287
 ## versão: 2.0v
 #############################################
 import numpy as np
