@@ -15,7 +15,7 @@ while t<1:
     LG110=[];LG210=[] # lista com a cada 3 unidades serem 1 elemento
     LG19=[];LG29=[] # lista com a cada 3 elementos serem 1 elemento
     LG1TTUF=[];LG2TTUF=[] # lista por dado unitario Final
-    LG110F=[];LG210F=[] # lista com a cada 10 unidades serem 1 elemento Final
+    #LG110F=[];LG210F=[] # lista com a cada 10 unidades serem 1 elemento Final
     LG121=[]; LG221=[]# lista com a cada 21 elementos serem 1 elemento
     R=[];E=[]; D=[]
     #####################NOME DOS ArQUIVOS#######################################
@@ -48,7 +48,7 @@ while t<1:
         listtemp.append(LG1TTU[p]+LG1TTU[p+1]+LG1TTU[p+2])               
         LG110.append(listtemp[0])   ##configura para cada 3 letras serem 1 elemento da lista
         p=p+3
-    q=len(LG121)
+    q=len(LG110)
     #################################################
     #while kk < len(LG110)-7:
     #    listtemp=[]
@@ -137,14 +137,6 @@ while t<1:
             E.append(str(y+1))
         y=y+1
     ################################################################################
-    print("Analisando...")
-    while v < len(LG110):
-        if LG110[v] != LG210[v]:
-            LG110F.append(LG110[v])    ##separação de 3 em 3
-            LG210F.append(LG210[v])
-            R.append(str(v+1))
-        v=v+1
-    ###################################################################################
     while z < len(LG110)-1:
         if LG110[z-1] != LG210[z-1] and LG110[z] != LG210[z] and LG110[z+1] != LG210[z+1]:
             LG19.append(LG110[z-1]+LG110[z]+LG110[z+1])    ##separação de 9 em 9
@@ -152,6 +144,33 @@ while t<1:
             D.append(str(z))
         z=z+1
     ################################################################################
+    print("Analisando...")
+    #while v < len(LG110):
+    #    if LG110[v] != LG210[v]:
+    #        LG110F.append(LG110[v])    ##separação de 3 em 3
+    #        LG210F.append(LG210[v])
+    #        R.append(str(v+1))
+    #    v=v+1
+    LG110F=LG110
+    LG210F=LG210
+    while len(LG110F)>len(LG210F):
+        LG210F.append("N/D")     
+    while len(LG110F)<len(LG210F):
+        LG110F.append("N/D")   
+    while v < len(LG110F):
+        if LG110F[v] in LG210:
+            LG110F.remove(LG110F[v])    ##separação de 3 em 3
+        v=v+1
+    v=0
+    while v < len(LG210F):
+        if LG210F[v] in LG110:
+            LG210F.remove(LG210F[v])    ##separação de 3 em 3
+        v=v+1
+    while len(LG110F)>len(LG210F):
+        LG210F.append("N/D")     
+    while len(LG110F)<len(LG210F):
+        LG110F.append("N/D")   
+    ###################################################################################
     print("Analisando...")
     LG221F=LG221
     while j < len(LG121):
@@ -208,14 +227,14 @@ while t<1:
     arq=open("analise_de_3_em_3_{}.txt".format(g),"w")
     arq.write(str("codon"+"\t"+"DNA1"+"\t"+"DNA2"+"\n"))
     while h<len(LG110F):
-        arq.write(str(R[h]+"\t"+LG110F[h]+"\t"+LG210F[h]+"\n"))
+        arq.write(str(str(h+1)+"\t"+LG110F[h]+"\t"+LG210F[h]+"\n"))
         h=h+1
     arq.close()
 ###############################################################################
     arq=open("analise_de_diferença_{}.txt".format(g),"w")
     arq.write(str("elemento"+"\t"+"DNA1"+"\t"+"DNA2"+"\n"))
     while i<len(LG121F):
-        arq.write(str("\t"+LG121F[i]+"\t"+LG221F[i]+"\n"))
+        arq.write(str(str(i+1)+"\t"+LG121F[i]+"\t"+LG221F[i]+"\n"))
         i=i+1
     arq.close()
 ###############################################################################
