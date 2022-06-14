@@ -2,7 +2,7 @@
 ## Autores: Luara Teodoro Lima ; Paloma Ketnyn Machado ; Uriel Gonçalves Paiva da conceição
 ## Turma: FEAU-5UNA
 ## Matriculas: 02011062 ; 02010030 ; 02010287
-## versão: 2.5v
+## versão: 2.0.1v
 #############################################
 g=1;t=0
 
