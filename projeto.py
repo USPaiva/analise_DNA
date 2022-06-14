@@ -19,7 +19,7 @@ while t<1:
     LG121=[]; LG221=[]# lista com a cada 21 elementos serem 1 elemento
     R=[];E=[]; D=[]
     #####################NOME DOS ArQUIVOS#######################################
-    print("Digite o nome + extensão do arquivo: \n Exemplo:gene.txt \n")
+    print("Digite o nome + extensão do arquivo: \n Exemplo:gene.txt \n OBS: os arquivos devem estar na mesma pasta que o programa. \n")
     a1= str(input("Digite o nome do primeiro arquivo: "))
     a2= str(input("Digite o nome do segundo arquivo: "))
     ###########leitura e manipulação do primeiro arquivo##############
@@ -48,7 +48,7 @@ while t<1:
         listtemp.append(LG1TTU[p]+LG1TTU[p+1]+LG1TTU[p+2])               
         LG110.append(listtemp[0])   ##configura para cada 3 letras serem 1 elemento da lista
         p=p+3
-    q=len(LG121)
+    q=len(LG110)
     ######################################################################################################
     while kk < len(LG1TTU)-21:
         listtemp=[]
